@@ -1,5 +1,5 @@
-//	@file Version: 1.0
-//	@file Name: smallGroup.sqf
+//  @file Version: 1.0
+//  @file Name: smallGroup.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 08/12/2012 21:58
 //	@file Args:
@@ -12,34 +12,34 @@ _group = _this select 0;
 _pos = _this select 1;
 
 //Anti Vehicle
-_leader = _group createunit ["Priest", [(_pos select 0) + 10, _pos select 1, 0], [], 0.5, "Form"];
+_leader = _group createunit ["Villager3", [(_pos select 0) + 10, _pos select 1, 0], [], 0.5, "Form"];
 _leader addMagazine "PG7V";
 _leader addMagazine "PG7V";
 _leader addWeapon "RPG7V";
-_leader addMagazine "30Rnd_545x39_AK";
-_leader addMagazine "30Rnd_545x39_AK";
-_leader addMagazine "30Rnd_545x39_AK";
-_leader addWeapon "AKS_74_U";
+_leader addMagazine "30Rnd_545x39_AKSD";
+_leader addMagazine "30Rnd_545x39_AKSD";
+_leader addMagazine "30Rnd_545x39_AKSD";
+_leader addWeapon "AKS_74_UN_kobra";
 
 //Support
-_man2 = _group createunit ["Priest", [(_pos select 0) - 30, _pos select 1, 0], [], 0.5, "Form"];
-_man2 addMagazine "75Rnd_545x39_RPK";
-_man2 addMagazine "75Rnd_545x39_RPK";
-_man2 addWeapon "RPK_74";
+_man2 = _group createunit ["Villager3", [(_pos select 0) - 30, _pos select 1, 0], [], 0.5, "Form"];
+_man2 addMagazine "100Rnd_762x54_PK";
+_man2 addMagazine "100Rnd_762x54_PK";
+_man2 addWeapon "Pecheneg";
 
 //Rifleman
-_man3 = _group createunit ["Priest", [_pos select 0, (_pos select 1) + 30, 0], [], 0.5, "Form"];
+_man3 = _group createunit ["Villager3", [_pos select 0, (_pos select 1) + 30, 0], [], 0.5, "Form"];
 _man3 addMagazine "30Rnd_762x39_AK47";
 _man3 addMagazine "30Rnd_762x39_AK47";
 _man3 addMagazine "30Rnd_762x39_AK47";
-_man3 addWeapon "AK_47_M";
+_man3 addWeapon "AKS_GOLD";
 
 //Sniper
-_man4 = _group createunit ["Priest", [_pos select 0, (_pos select 1) - 30, 0], [], 0.5, "Form"];
-_man4 addMagazine "10Rnd_762x54_SVD";
-_man4 addMagazine "10Rnd_762x54_SVD";
-_man4 addMagazine "10Rnd_762x54_SVD";
-_man4 addWeapon "SVD";
+_man4 = _group createunit ["Villager3", [_pos select 0, (_pos select 1) - 30, 0], [], 0.5, "Form"];
+_man4 addMagazine "5Rnd_127x108_KSVK";
+_man4 addMagazine "5Rnd_127x108_KSVK";
+_man4 addMagazine "5Rnd_127x108_KSVK";
+_man4 addWeapon "KSVK";
 
 _leader = leader _group;
 _man1 setVehicleInit "null = [group this,(getPos this)] execVM 'server\functions\defendArea.sqf'";
