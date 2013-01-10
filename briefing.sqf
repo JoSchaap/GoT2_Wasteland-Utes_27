@@ -82,15 +82,16 @@ player createDiaryRecord["changelog",
 "2.4",
 "
 <br/>
-		[Added] - Three new objects.<br/>
-		[Added] - More anti hack for vehicles.<br/>
-		[Added] - Check to make sure missions don't pop up in the same place.<br/>
-		[Added] - Static Boats.<br/>
-		[Changed] - Increased length of welcome message.<br/>
-		[Changed] - Mission failover to 60 mins.<br/>
-		[Changed] - Increased delay for body clean up to 15 mins.<br/>
-		[Fixed] - Vehicle respawn script.<br/>
-		[Removed] - Some debuging.<br/>
+        [Added] Three new objects.<br/>
+        [Added] Static Boats.<br/>
+        [Added] More anti hack for vehicles.<br/>
+        [Added] Check to make sure missions don't pop up in the same place.<br/>
+        [Changed] Increased length of welcome message.<br/>
+        [Changed] Mission failover to 60 mins.<br/>
+        [Changed] Body clean up to 10 mins.<br/>
+        [Fixed] Vehicle respawn script.<br/>
+        [Fixed] Spawning in swimming animiation.<br/>
+        [Removed] Some debuging.<br/>
 "
 ]
 ];
@@ -165,6 +166,8 @@ player createDiaryRecord["changelog",
 		[Fixed] - Feedback messages missing.<br/>
         [Fixed] - Money dupe.<br/>
 		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
+		[GoT2DayZ] - Alot of Buildings and Structures added.<br/>
+		[GoT2DayZ] - Changed AI Looks and loadouts (better weapons!).<br/>
 "
 ]
 ];
@@ -176,11 +179,12 @@ player createDiaryRecord["404games",
 <br/>
 	Contributors:<br/><br/>
 	Credit to Tonic for original game-mode creation.<br/><br/>
+	
 	404 Developers:<br/><br/>
-	Developer - Deadbeat<br/>
-	Developer - Costlyy<br/>
-    Developer - Pulse<br/>
-	Server Host - Domuk<br/>
+	Development Lead - Deadbeat<br/>
+	Senior Developer - Costlyy<br/>
+	Server Host - JoSchaap, CyW00d and TransIP.nl<br/>
+	
 "
 ]
 ];
@@ -191,7 +195,7 @@ player createDiaryRecord["404games",
 "
 <br/>
 	Found a bug? Please report it at: http://www.404games.co.uk/bugs<br/><br/>
-	Suspect a player is hacking or exploiting? Please report it at: http://www.404games.co.uk/bans<br/><br/>
+	Suspect a player is hacking or exploiting? Please report it at: http://www.got2dayz.nl<br/><br/>
 	Please remeber this game-mode is in continuous development and there will be bugs. 
 "
 ]
@@ -202,8 +206,8 @@ player createDiaryRecord["404games",
 "Teamspeak",
 "
 <br/>
-	There is a public Teamspeak 3 server available for players of this server.<br/><br/>
-	Teamspeak IP: ts.404games.co.uk:9988<br/><br/>
+	Admins for this server are usually on the GoTLike Teamspeak.<br/><br/>
+	Teamspeak IP: teamspeak.gotlike.nl<br/><br/>
 	Please join and say hello! (Please speak English)
 "
 ]
@@ -234,8 +238,8 @@ The Wasteland is a team versus team versus team sandbox survival experience. The
 
 FAQ<br/>
 Q. What am I supposed to do here?<br/>
-A. See the above description<br/>
-<br/>
+A. See the above description
+<br/><br/>
 Q. Where can I get a gun?<br/>
 A. Weapons are found in one of three places, first in ammo caches that randomly spawn around the map inside and outside buildings, and second, in the gear section of the vehicles, which also randomly spawn around the map. The last place to find a gun would be at the gunshops located throughout the map. You can also find them on dead players whose bodies have not yet been looted.
 <br/><br/>
