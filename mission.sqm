@@ -1634,7 +1634,7 @@ class Mission
 			special="NONE";
 			id=102;
 			side="EMPTY";
-			vehicle="Land_A_statue02";
+			vehicle="Land_A_statue01";
 			lock="LOCKED";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this setvectorup [0,0,1]";

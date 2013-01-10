@@ -168,6 +168,7 @@ player createDiaryRecord["changelog",
 		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
 		[GoT2DayZ] - Alot of Buildings and Structures added.<br/>
 		[GoT2DayZ] - Changed AI Looks and loadouts (better weapons!).<br/>
+		[GoT2DayZ] - Changed some extra features, strings, elements, ... to make it more GoT2Wasteland like :D<br/>
 "
 ]
 ];
@@ -184,6 +185,7 @@ player createDiaryRecord["404games",
 	Development Lead - Deadbeat<br/>
 	Senior Developer - Costlyy<br/>
 	Server Host - JoSchaap, CyW00d and TransIP.nl<br/>
+	GoT2DayZ modifications - Rienspy<br/>
 	
 "
 ]
