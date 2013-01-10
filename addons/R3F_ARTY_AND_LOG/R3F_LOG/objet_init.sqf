@@ -37,21 +37,21 @@ if (isNil "_est_deplace_par") then
 	_objet setVariable ["R3F_LOG_est_deplace_par", objNull, false];
 };
 
-// Ne pas monter dans un véhicule qui est en cours de transport
-_objet addEventHandler ["GetIn",
-{
-	if (_this select 2 == player) then
-	{
-		_this spawn
-		{
-			if ((!(isNull (_this select 0 getVariable "R3F_LOG_est_deplace_par")) && (alive (_this select 0 getVariable "R3F_LOG_est_deplace_par"))) || !(isNull (_this select 0 getVariable "R3F_LOG_est_transporte_par"))) then
-			{
-				player action ["eject", _this select 0];
-				player globalChat STR_R3F_LOG_transport_en_cours;
-			};
-		};
-	};
-}];
+// Ne pas monter dans un véhicule qui est en cours de transport => I have deleted this feature because IRL you can enter TOWed vehicles too. If You want to re-enable this again, just remove the //'s.
+//_objet addEventHandler ["GetIn",
+//{
+//	if (_this select 2 == player) then
+//	{
+//		_this spawn
+//		{
+//			if ((!(isNull (_this select 0 getVariable "R3F_LOG_est_deplace_par")) && (alive (_this select 0 getVariable "R3F_LOG_est_deplace_par"))) || !(isNull (_this select 0 getVariable "R3F_LOG_est_transporte_par"))) then
+//			{
+//				player action ["eject", _this select 0];
+//				player globalChat STR_R3F_LOG_transport_en_cours;
+//			};
+//		};
+//	};
+//}];
 
 if ({_objet isKindOf _x} count R3F_LOG_CFG_objets_deplacables > 0) then
 {
