@@ -6,7 +6,7 @@
 
 _radius = 200;
 _status = [];
-_generalStores = ["generalStore1","generalStore2","generalStore3","generalStore4","generalStore5"];
+_generalStores = ["generalStore1","generalStore2"]; // thanks for the info Deadbeat!
 _col_empty = "ColorBlue";
 _col_enemy = "ColorRed";
 _col_friendly = "ColorGreen";
