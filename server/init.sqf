@@ -33,7 +33,6 @@ if (serverSpawning == 1) then {
     [] execVM "server\functions\objectsSpawning.sqf";
     [] execVM "server\functions\boxSpawning.sqf";
     [] execVM "server\functions\staticGunSpawning.sqf";
-    [] execVM "server\functions\staticHeliSpawning.sqf";
 };
 
 //Execute Server Missions.
