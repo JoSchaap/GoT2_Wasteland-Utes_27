@@ -86,13 +86,13 @@ generalStore = [
 // Chernarus town and city array
 //Marker Name, Radius, City Name
 cityList = [
-		["Town_0",100,"Strelka"],
+		["Town_0",50,"Strelka"],
 		["Town_1",50,"North Strelka"],
-		["Town_2",150,"Kamenyy"],
+		["Town_2",50,"Kamenyy"],
 		["Town_3",50,"West Kamenyy"],
-		["Town_4",50,"South Kamenyy"],
+		["Town_4",50,"West Hill"],
 		["Town_5",50,"Lighthouse"],
-		["Town_6",50,"North of Airfield"],
-		["Town_7",150,"South of Airfield"]
+		["Town_6",50,"Airfield"],
+		["Town_7",50,"South Hill"]
 ];
 cityLocations = [];

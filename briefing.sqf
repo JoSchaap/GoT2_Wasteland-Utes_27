@@ -166,9 +166,11 @@ player createDiaryRecord["changelog",
 		[Fixed] - Feedback messages missing.<br/>
         [Fixed] - Money dupe.<br/>
 		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
-		[GoT2DayZ] - Alot of Buildings and Structures added.<br/>
+		[GoT2DayZ] - Alot of Buildings and Structures added. Some buildings are now potential fortified bases.<br/>
 		[GoT2DayZ] - Changed AI Looks and loadouts (better weapons!).<br/>
 		[GoT2DayZ] - Changed some extra features, strings, elements, ... to make it more GoT2Wasteland like :D<br/>
+		[GoT2DayZ] - Relocated the gunstore, spawn locations.<br/>
+		[GoT2DayZ] - Other changes: Server cleanup more agressive, removed static heli spawn and did some more tweaking...<br/>
 "
 ]
 ];
