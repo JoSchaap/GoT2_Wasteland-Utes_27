@@ -108,7 +108,7 @@ class Mission
 					azimut=25;
 					id=1;
 					side="LOGIC";
-					vehicle="CIV_Contractor1_BAF";
+					vehicle="Farmwife1";
 					leader=1;
 					skill=0.60000002;
 					text="gs1";
@@ -128,7 +128,7 @@ class Mission
 					azimut=328.64359;
 					id=4;
 					side="LOGIC";
-					vehicle="TK_CIV_Takistani04_EP1";
+					vehicle="RU_Hooker1";
 					leader=1;
 					skill=0.60000002;
 					text="generalStore1";
@@ -148,7 +148,7 @@ class Mission
 					azimut=328.64359;
 					id=7;
 					side="LOGIC";
-					vehicle="TK_CIV_Takistani04_EP1";
+					vehicle="RU_Hooker1";
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
