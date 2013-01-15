@@ -1,7 +1,7 @@
 /*  
 =========================================================
   Simple Vehicle Respawn Script v1.7
-  by Tophe of Östgöta Ops [OOPS]
+  by Tophe of ï¿½stgï¿½ta Ops [OOPS]
   
   Put this in the vehicles init line:
   veh = [this] execVM "vehicle.sqf"
@@ -91,52 +91,52 @@ _nodelay = false;
 _startTime = floor(time);
 
 // Start monitoring the vehicle
-while {_run} do 
-{	
-	_currTime = floor(time);
+while {_run} do
+{
+_currTime = floor(time);
     if(_currTime - _startTime >= 300) then {_result = 1;};
         
-	if(_result == 1) then
+if(_result == 1) then
     {
         sleep (2 + random 10);
-      	if ((getDammage _unit > 0.8) and ({alive _x} count crew _unit == 0)) then {_dead = true};
+       if ((getDammage _unit > 0.6) and ({alive _x} count crew _unit == 0)) then {_dead = true};
 
-		// Check if the vehicle is deserted.
-		if (_deserted > 0) then
-		{
-			if ((getPosASL _unit distance _position > 10) and ({alive _x} count crew _unit == 0) and (getDammage _unit < 0.8)) then 
-			{
-				_timeout = time + _deserted;
-				sleep 0.1;
-			 	waitUntil {_timeout < time or !alive _unit or {alive _x} count crew _unit > 0};
-				if ({alive _x} count crew _unit > 0) then {_dead = false}; 
-				if ({alive _x} count crew _unit == 0) then {_dead = true; _nodelay =true}; 
-				if !(alive _unit) then {_dead = true; _nodelay = false}; 
-			};
-		};
+// Check if the vehicle is deserted.
+if (_deserted > 0) then
+{
+if ((getPosASL _unit distance _position > 10) and ({alive _x} count crew _unit == 0) and (getDammage _unit < 0.8)) then
+{
+_timeout = time + _deserted;
+sleep 0.1;
+waitUntil {_timeout < time or !alive _unit or {alive _x} count crew _unit > 0};
+if ({alive _x} count crew _unit > 0) then {_dead = false};
+if ({alive _x} count crew _unit == 0) then {_dead = true; _nodelay =true};
+if !(alive _unit) then {_dead = true; _nodelay = false};
+};
+};
 
-		// Respawn vehicle
-      	if (_dead) then 
-		{	
-			if (_nodelay) then {sleep 0.1; _nodelay = false;} else {sleep _delay;};
-			if (_dynamic) then {_position = getPosASL _unit; _dir = getDir _unit;};
-			if (_explode) then {_effect = "M_TOW_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
-			sleep 0.1;
-	
-			deleteVehicle _unit;
-			sleep 2;
+// Respawn vehicle
+       if (_dead) then
+{
+if (_nodelay) then {sleep 0.1; _nodelay = false;} else {sleep _delay;};
+if (_dynamic) then {_position = getPosASL _unit; _dir = getDir _unit;};
+if (_explode) then {_effect = "M_TOW_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
+sleep 0.1;
+
+deleteVehicle _unit;
+sleep 2;
             
             _num = floor (random 100);
-			if (_num < 100) then {_type = 0;};
-			if (_num < 35) then {_type = 1;};
-			if (_num < 10) then {_type = 2;};
-			[_position, _type] call vehicleCreation;
-			_run = false;
-		};
+if (_num < 100) then {_type = 0;};
+if (_num < 35) then {_type = 1;};
+if (_num < 10) then {_type = 2;};
+[_position, _type] call vehicleCreation;
+_run = false;
+};
         
         _startTime = floor(time);
-		_result = 0;
+_result = 0;
     } else {
-    	sleep 1;
+     sleep 1;
     };
 };
