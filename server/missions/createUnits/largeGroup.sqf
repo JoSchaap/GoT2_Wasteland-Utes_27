@@ -90,5 +90,5 @@ _man10 addMagazine "30Rnd_556x45_Stanag";
 _man10 addWeapon "M16A4";
 
 _leader = leader _group;
-_man1 setVehicleInit "null = [group this,(getPos this)] execVM 'server\functions\defendArea.sqf'";
+_leader setVehicleInit "null = [group this,(getPos this)] execVM 'server\functions\defendArea.sqf'";
 processInitCommands;

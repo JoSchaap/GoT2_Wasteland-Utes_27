@@ -42,5 +42,5 @@ _man4 addMagazine "5Rnd_127x108_KSVK";
 _man4 addWeapon "KSVK";
 
 _leader = leader _group;
-_man1 setVehicleInit "null = [group this,(getPos this)] execVM 'server\functions\defendArea.sqf'";
+_leader setVehicleInit "null = [group this,(getPos this)] execVM 'server\functions\defendArea.sqf'";
 processInitCommands;
