@@ -169,7 +169,7 @@ player createDiaryRecord["changelog",
 		[GoT2DayZ] - Alot of Buildings and Structures added. Some buildings are now potential fortified bases.<br/>
 		[GoT2DayZ] - Changed AI Looks and loadouts (better weapons!).<br/>
 		[GoT2DayZ] - Changed some extra features, strings, elements, ... to make it more GoT2Wasteland like :D<br/>
-		[GoT2DayZ] - Relocated the gunstore, spawn locations.<br/>
+		[GoT2DayZ] - Relocated the gunstore and added a second one,relocated some spawn locations.<br/>
 		[GoT2DayZ] - Other changes: Server cleanup more agressive, removed static heli spawn and did some more tweaking...<br/>
 "
 ]
