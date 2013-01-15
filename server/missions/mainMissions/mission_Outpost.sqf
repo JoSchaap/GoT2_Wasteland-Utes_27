@@ -56,7 +56,7 @@ _result = 0;
 clientMissionMarkers set [count clientMissionMarkers,["Outpost_Marker",_randomPos,"Capture Outpost"]];
 publicVariable "clientMissionMarkers";
 
-_veh = ["outpostUS1"] call BIS_fnc_selectRandom;
+_veh = ["outpostUS1","outpostUSA1","outpostUSB1"] call BIS_fnc_selectRandom;
 _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
 _vehicleName = "Outpost";

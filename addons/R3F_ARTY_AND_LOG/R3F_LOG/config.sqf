@@ -506,7 +506,9 @@ R3F_LOG_CFG_objets_deplacables = [
 	"Land_leseni4x",
 	"Wall_L_2m5_EP1",
 	"ATV_Base_EP1",
-	"Motorcycle"
+	"Motorcycle",
+	"Land_radar_EP1",
+	"Land_vez"
 ];
 
 /*
