@@ -6,7 +6,7 @@
 
 _radius = 100;
 _status = [];
-_gunStores = ["gs1"]; //thanks for the info Deadbeat!
+_gunStores = ["gs1","gs2"]; //thanks for the info Deadbeat!
 _col_empty = "ColorBlue";
 _col_enemy = "ColorRed";
 _col_friendly = "ColorGreen";
