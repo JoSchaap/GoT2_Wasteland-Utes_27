@@ -11,25 +11,30 @@ _counter = 0;
 
 diag_log format["Vehicle Spawning Started"];
 
-while {_counter < 76} do
+while {_counter < 100} do
 {
     _pos = getMarkerPos format ["Spawn_%1", _counter];
-	_type = 0;
+_type = 0;
     _num = floor (random 100);
-	if (_num < 100) then {_type = 0;};
-	if (_num < 35) then {_type = 1;};
-	if (_num < 10) then {_type = 2;};
-	[_pos, _type] call vehicleCreation;
+if (_num < 100) then {_type = 0;};
+if (_num < 35) then {_type = 1;};
+if (_num < 10) then {_type = 2;};
+[_pos, _type] call vehicleCreation;
     _counter = _counter + 1;
     
     /*
     _markerName = format["marker%1",_counter];
-	_marker = createMarker [_markerName, _pos];
-	_marker setMarkerType "dot";
-	_marker setMarkerSize [1.25, 1.25];
-	_marker setMarkerColor "ColorRed";
+_marker = createMarker [_markerName, _pos];
+_marker setMarkerType "dot";
+_marker setMarkerSize [1.25, 1.25];
+_marker setMarkerColor "ColorRed";
     */
 };
+
+_amountOfVehicles = count currentVehicles;
+diag_log format["WASTELAND SERVER - %1 Vehicles Spawned",_amountOfVehicles];
+
+vehicleSpawnComplete = true;
 
 _amountOfVehicles = count currentVehicles;
 diag_log format["WASTELAND SERVER - %1 Vehicles Spawned",_amountOfVehicles];
