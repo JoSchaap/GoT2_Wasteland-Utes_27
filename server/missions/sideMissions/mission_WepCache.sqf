@@ -12,7 +12,7 @@
 
 if(!isServer) exitwith {};
 diag_log format["WASTELAND SERVER - Mission Started"];
-private ["_unitsAlive","_playerPresent","_missionType","_successTextColour","_mainTextColour","_failTextColour","_subTextColour","_picture","_vehicleName","_rad","_centerPos","_missionTimeOut","_missionDelayTime","_missionTriggerRadius","_missionPlayerRadius","_flatAreas","_randomArea","_hint","_startTime","_currTime","_result","_box","_box2"];
+private ["_unitsAlive","_playerPresent","_missionType","_successTextColour","_mainTextColour","_failTextColour","_subTextColour","_picture","_vehicleName","_rad","_centerPos","_missionTimeOut","_missionDelayTime","_missionTriggerRadius","_missionPlayerRadius","_flatareas","_randomArea","_hint","_startTime","_currTime","_result","_box","_box2","_randomIndex","_selectedMarker","_indexAmount","_GotLoc","_WhyDoINeedThis","_randomPos"];
 
 //Mission Initialization.
 _rad=20000;
@@ -25,16 +25,40 @@ _subTextColour = "#FFFFFF";
 _missionTimeOut = 1800;
 _missionDelayTime = 600;
 _missionPlayerRadius = 50;
-_centerPos = getArray (configFile >> "CfgWorlds" >> worldName >> "centerPosition");
-_flatAreas = nearestLocations [_centerPos, ["FlatArea"], _rad];
-_randomPos = getpos (_flatAreas select random (count _flatAreas -1));
 
-if(str(mainMissionPos) == str(_randomPos)) then
-{
-	_flatAreas = _flatAreas - _randomPos;    
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//This is the new system for missions so that I can use map makers (Mission_0,Mission_1...) Instead of it looking for flat ground//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+_GotLoc = false; //Make sure this is false at first
+while {!_GotLoc} do { //Loop until it's true 
+
+	//Count how many markers exist (Array is in config.sql)
+	_indexAmount = count MissionSpawnMarkers; 
+	//remove 1 index so we don't use an invalid index
+	_indexAmount = _indexAmount - 1; 
+	//Select a random number out of the number of indexes and round it to avoid floats
+	_randomIndex = round(random _indexAmount); 
+	
+	//If the index of the mission markers array is false then break the loop and finish up doing the mission
+	if (!(MissionSpawnMarkers select _randomIndex select 1)) then {
+		//Select random mission spawn marker
+		_selectedMarker = MissionSpawnMarkers select _randomIndex; 
+		//Fuck knows why I need this but it wouldn't work if I directly used slectedmarker select 0
+		_WhyDoINeedThis = _selectedMarker select 0; 
+		//set RandomPos as the selected markers position
+		_randomPos = getMarkerPos _WhyDoINeedThis; 
+		//Finally set the mainMissionPos as the position of the marker
+		mainMissionPos = str(_randomPos);
+		//Set the marker bool as true to ensure we don't spawn multiple missions on it
+		MissionSpawnMarkers select _randomIndex set[1, true];
+		_GotLoc = true;
+	};
+	
 };
-_randomPos = getpos (_flatAreas select random (count _flatAreas -1));
-sideMissionPos = str(_randomPos);
+waitUntil {_GotLoc}; //ensure the rest of the script doesn't continue until we are done
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////End of custom code, check lines, 126, 133/////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Tell everyone their will be a mission soon.
 _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>Starting in %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour];
@@ -91,12 +115,14 @@ if(_result == 1) then
     deleteGroup CivGrpS;
     _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%2' size='1.25'>%1</t><br/><t align='center' color='%3'>Objective failed, better luck next time</t>", _missionType, _failTextColour, _subTextColour];
 	[nil,nil,rHINT,_hint] call RE;
+	MissionSpawnMarkers select _randomIndex set[1, false]; //Reset the mission spawn bool
     diag_log format["WASTELAND SERVER - Mission Failed"];
 } else {
 	//Mission Complete.
     deleteGroup CivGrpS;
     _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>The ammo caches have been collected well done team</t>", _missionType, _successTextColour, _subTextColour];
 	[nil,nil,rHINT,_hint] call RE;
+	MissionSpawnMarkers select _randomIndex set[1, false]; //Reset the mission spawn bool
     diag_log format["WASTELAND SERVER - Mission Finished"];
 };
 
