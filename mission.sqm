@@ -2454,7 +2454,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=96;
+		items=103;
 		class Item0
 		{
 			position[]={3210.8767,14.462185,4405.5029};
@@ -2919,7 +2919,7 @@ class Mission
 		};
 		class Item77
 		{
-			position[]={3117.3496,45.55088,4227.5308};
+			position[]={2998.0984,35.513306,4112.0698};
 			name="Town_3";
 			type="Empty";
 		};
@@ -2937,13 +2937,13 @@ class Mission
 		};
 		class Item80
 		{
-			position[]={3558.2507,18.774897,3697.1968};
+			position[]={3549.5764,20.303459,3753.6089};
 			name="Town_6";
 			type="Empty";
 		};
 		class Item81
 		{
-			position[]={4155.7935,43.320644,2903.2051};
+			position[]={4199.2939,34.512394,2857.1228};
 			name="Town_7";
 			type="Empty";
 		};
@@ -3052,6 +3052,48 @@ class Mission
 			text="Residential base";
 			type="mil_warning";
 			colorName="ColorRed";
+		};
+		class Item96
+		{
+			position[]={3726.7163,53.576992,3947.8032};
+			name="Mission_0";
+			type="Empty";
+		};
+		class Item97
+		{
+			position[]={3514.0955,25.827637,3203.3496};
+			name="Mission_1";
+			type="Empty";
+		};
+		class Item98
+		{
+			position[]={4009.4785,24.311357,3080.2178};
+			name="Mission_2";
+			type="Empty";
+		};
+		class Item99
+		{
+			position[]={3900.8804,19,3610.8215};
+			name="Mission_3";
+			type="Empty";
+		};
+		class Item100
+		{
+			position[]={2981.1211,10.532742,4299.1499};
+			name="Mission_4";
+			type="Empty";
+		};
+		class Item101
+		{
+			position[]={3103.1943,40.687477,3870.6904};
+			name="Mission_5";
+			type="Empty";
+		};
+		class Item102
+		{
+			position[]={3379.429,18.938816,3566.1177};
+			name="Mission_6";
+			type="Empty";
 		};
 	};
 };

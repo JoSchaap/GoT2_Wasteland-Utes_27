@@ -96,3 +96,15 @@ cityList = [
 		["Town_7",50,"South Hill"]
 ];
 cityLocations = [];
+
+//List of mission spawn markers (See the mission.sqm or use the editor to see the locations, just search for the markers beginning with Mission_x
+//Marker Name, Is it being used boolean
+MissionSpawnMarkers = [
+["Mission_0",false],
+["Mission_1",false],
+["Mission_2",false],
+["Mission_3",false],
+["Mission_4",false],
+["Mission_5",false],
+["Mission_6",false]
+];
