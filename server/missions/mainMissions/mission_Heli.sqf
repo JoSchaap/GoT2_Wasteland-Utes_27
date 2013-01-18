@@ -83,9 +83,9 @@ publicVariable "clientMissionMarkers";
 _veh = ["MV22","UH1Y","Mi17_Civilian","Mi17_medevac_RU","MH60S","UH60M_EP1","CH_47F_BAF","MH6J_EP1","AH6X_EP1","UH1H_TK_GUE_EP1","Ka60_PMC","BAF_Merlin_HC3_D"] call BIS_fnc_selectRandom;
 
 _chopper = createVehicle [_veh,[(_randomPos select 0), _randomPos select 1,0],[], 0, "NONE"];
-_chopper setFuel 0.25;
+_chopper setFuel 0.05;
 _chopper setVehicleAmmo 1;
-_chopper setdamage 0.50;
+
 
 clearMagazineCargoGlobal _chopper;
 clearWeaponCargoGlobal _chopper;
