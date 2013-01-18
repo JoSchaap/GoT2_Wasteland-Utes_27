@@ -1,4 +1,3 @@
-
 //	@file Version: 1.1
 //	@file Name: playerActions.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
@@ -33,3 +32,8 @@ aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Deploy rada
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#E01B1B"">Repack radar</t>"), "client\functions\radarPack.sqf", nil, 6, false, false, "", '_currRadar = (nearestobjects [player, ["M1130_HQ_unfolded_Base_EP1"],  5]); player distance (_currRadar select 0) < 5; ((nearestObjects[player, ["M1130_HQ_unfolded_Base_EP1"], 10] select 0) getVariable "deployed") == 1']];
 //Camonet pickup
 aActionsIDs = aActionsIDs + [player addAction["Pickup Camo Net", "client\actions\pickupcamonet.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_CamoNet_NATO"],  5] select 0) < 5 and (player getVariable "camonet")<1 ']];
+
+/custom water truck
+aActionsIDs = aActionsIDs + [player addAction['<t color="#FF0000">' + "Bottle up water" + '</t>', "noscript.sqf", '_nobj = (nearestobjects [player, ["UralCivil"], 5] select 0); _nobj setVariable["water",(_nobj getVariable "water")-1,true]; player setVariable["water",(player getVariable "water")+1,true]; player playmove "AinvPknlMstpSlayWrflDnon"; if(_nobj getVariable "water" < 1) then {hint "There is no more water left in this supply truck"} else {hint format["You have filled water bottle.\n(Water left: %1)", (_nobj getVariable "water")];};',0,false,false,"",'player distance (nearestobjects [player, ["UralCivil"], 5] select 0) < 5 and (player getVariable "water") < 4 and (nearestobjects [player, ["UralCivil"], 5] select 0) getVariable "water" > 0']];
+//custom food truck
+aActionsIDs = aActionsIDs + [player addAction['<t color="#FF0000">' + "Take Canned food"+ '</t>', "noscript.sqf", '_nobj = (nearestobjects [player, ["UralCivil2"], 5] select 0); _nobj setVariable["food",(_nobj getVariable "food")-1,true]; player setVariable["canfood",(player getVariable "canfood")+1,true]; player playmove "AinvPknlMstpSlayWrflDnon"; if(_nobj getVariable "food" < 1) then {hint "There is no more food left in this supply truck";} else {hint format["You have taken some canned food\n(Supply truck still has %1)", (_nobj getVariable "food")];};',0,false,false,"",'player distance (nearestobjects [player, ["UralCivil2"], 5] select 0) < 5 and (player getVariable "canfood") < 3 and (nearestobjects [player, ["UralCivil2"], 5] select 0) getVariable "food" > 0']];
