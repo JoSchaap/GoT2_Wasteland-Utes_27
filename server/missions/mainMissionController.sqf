@@ -10,7 +10,8 @@ _MMarray = ["mission_LightTank",
             "mission_APC",
             "mission_Heli",
             "mission_Outpost",
-            "mission_RadarTruck"];          
+            "mission_RadarTruck",
+            "mission_supplies"];          
 
 mainMissionRunning = false;
 _startTime = floor(time);
